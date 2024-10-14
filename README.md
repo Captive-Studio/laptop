@@ -24,7 +24,7 @@ Available profiles :
 2. Run the installation command :
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jpolo/laptop/main/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Captive-Studio/laptop/main/install.sh)"
 ```
 
 ## ✨ Features
@@ -148,9 +148,16 @@ Contributions are welcome especially when :
 - adding new capabilities / support for the tool
 - reporting / fixing security issues
 
-## 🩷 Funding
+## ℹ️ About Captive
 
-If you like this repository and it made you win a lot of time / money (by not hiring a devops for example :) ), you may consider a small donation to help me maintaining this repository [Link to my profile](https://github.com/jpolo#-donate).
+![captive](https://raw.githubusercontent.com/Captive-Studio/assets/main/logo_captive_blue_avec_fond.webp)
+
+We love open source software!
+See [our other projects][community] or
+[hire us][hire] to design, develop, and grow your product.
+
+[community]: https://github.com/Captive-Studio
+[hire]: https://www.captive.fr/contact?utm_source=github
 
 [asdf-vm]: https://github.com/asdf-vm/asdf
 [Git]: https://git-scm.com/
