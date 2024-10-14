@@ -4,7 +4,8 @@
 # 🔧 These variable can be changed to customize a forked laptop repository
 #
 RELEASE="main"
-REPOSITORY_NAME=${REPOSITORY_NAME:-"jpolo/laptop"}
+REPOSITORY_NAME=${REPOSITORY_NAME:-"Captive-Studio/laptop"}
+export LAYOUT_PROFILE=captive
 export LAPTOP_GIT_REMOTE="https://github.com/$REPOSITORY_NAME.git"
 
 #==============================================================================
