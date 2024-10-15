@@ -1,4 +1,4 @@
-# 💻 Laptop initialization script
+# 💻 Captive Laptop initialization script
 
 The main goal of this project is to help developers to focus on delivering value instead of struggling with the workstation configuration.
 
