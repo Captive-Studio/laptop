@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Confirm
 #
 # Example 1 :
@@ -8,8 +10,8 @@
 #   if [ $? -eq 0 ]
 #
 laptop::confirm() {
-  echo -n "$@ "
-  read -e answer
+  echo -n "$* "
+  read -e -r answer
   for response in y Y yes YES Yes Sure sure SURE OK ok Ok
   do
     if [ "_$answer" == "_$response" ]

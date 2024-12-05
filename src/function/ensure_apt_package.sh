@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 laptop::ensure_apt_package() {
   local executable="$1"
@@ -7,6 +8,6 @@ laptop::ensure_apt_package() {
   if dpkg -s "$package" &>/dev/null; then
     laptop::step_ok
   else
-    laptop::step_eval "sudo apt-get install $(quote $package) -yy"
+    laptop::step_eval "sudo apt-get install $(quote "$package") -yy"
   fi
 }
