@@ -22,8 +22,9 @@ if command -v zinit &>/dev/null; then
   # zinit light trapd00r/LS_COLORS
 
   # Fish like suggestions
-  zinit ice wait"0a" lucid atload"_zsh_autosuggest_start"
-  zinit light zsh-users/zsh-autosuggestions
+  zinit wait lucid for \
+    atload"!_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions
 
   zinit ice wait:0a lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
   zinit light zsh-users/zsh-history-substring-search
@@ -32,8 +33,20 @@ if command -v zinit &>/dev/null; then
   # Completions
   ##
 
+  # ZSH community completions
+  zinit wait lucid for \
+    blockf \
+      zsh-users/zsh-completions
+
+  # Docker completion
+  zinit wait lucid light-mode has"docker" for \
+    as"completion" OMZ::plugins/docker/completions/_docker \
+    as'completion' OMZ::plugins/docker-compose/_docker-compose
+
   # Brew completions
   zinit ice wait"0b" lucid blockf
+
+
   # Brew completions
   if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -41,9 +54,6 @@ if command -v zinit &>/dev/null; then
     autoload -Uz compinit
     compinit
   fi
-
-  # Zsh completions
-  zinit light zsh-users/zsh-completions
 
   # Zsh OMZ libraries
   zinit snippet OMZL::clipboard.zsh
@@ -64,11 +74,8 @@ if command -v zinit &>/dev/null; then
   # @see https://github.com/zdharma-continuum/fast-syntax-highlighting?tab=readme-ov-file#zinit
   zinit wait lucid for \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
-    blockf \
-    zsh-users/zsh-completions \
-    atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+      zdharma-continuum/fast-syntax-highlighting \
+      OMZ::plugins/colored-man-pages
 
   # Install also as a zsh plugin
   if [ -n "$LAPTOP_GIT_REMOTE" ]; then
